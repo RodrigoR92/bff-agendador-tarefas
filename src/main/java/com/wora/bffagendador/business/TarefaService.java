@@ -24,7 +24,7 @@ public class TarefaService {
     public List<TarefaDTOResponse> buscaTarefaAgendadaPorPeriodo(LocalDateTime dataInicial,
                                                                  LocalDateTime dataFinal,
                                                                  String token) {
-        return tarefasClient.buscaListaTarefaPorPeriodo(dataInicial, dataFinal, token);
+        return tarefasClient.buscaListaTarefaPorPeriodo(dataInicial, dataFinal,  token);
     }
 
     public List<TarefaDTOResponse> buscaTarefaPorEmail(String token) {
