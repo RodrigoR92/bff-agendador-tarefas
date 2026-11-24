@@ -1,4 +1,4 @@
-package com.wora.bffagendador.infrastructure.client.config;
+package com.wora.bffagendador.infrastructure.client;
 
 import com.wora.bffagendador.business.dto.response.TarefaDTOResponse;
 import org.springframework.cloud.openfeign.FeignClient;
