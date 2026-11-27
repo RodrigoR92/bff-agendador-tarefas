@@ -15,33 +15,33 @@ public interface TarefasClient {
 
     @PostMapping
     TarefaDTOResponse gravarTarefa(@RequestBody TarefaDTORequest request,
-                                   @RequestHeader(value = "Authorization", required = false) String token);
+                                   @RequestHeader("Authorization") String token);
 
 
     @GetMapping("/eventos")
     List<TarefaDTOResponse> buscaListaTarefaPorPeriodo(
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dataInicial,
             @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime dataFinal,
-             @RequestHeader(value = "Authorization", required = false) String token);
+             @RequestHeader("Authorization") String token);
 
 
     @GetMapping
-    List<TarefaDTOResponse> buscaListaTarefaPorEmail(@RequestHeader(value = "Authorization", required = false) String token);
+    List<TarefaDTOResponse> buscaListaTarefaPorEmail(@RequestHeader("Authorization") String token);
 
 
     @DeleteMapping
     void deletaTarefaPorId(@RequestParam("id") String id,
-                            @RequestHeader(value = "Authorization", required = false) String token);
+                            @RequestHeader("Authorization") String token);
 
 
     @PatchMapping
     TarefaDTOResponse alteraStatusNotificacao(@RequestParam("status") StatusNotificacaoEnum status,
                                               @RequestParam("id") String id,
-                                              @RequestHeader(value = "Authorization", required = false) String token);
+                                              @RequestHeader("Authorization") String token);
 
 
     @PutMapping
     TarefaDTOResponse updateTarefa(@RequestBody TarefaDTORequest request,
                                    @RequestParam("id") String id,
-                                   @RequestHeader(value = "Authorization", required = false) String token);
+                                   @RequestHeader("Authorization") String token);
 }
